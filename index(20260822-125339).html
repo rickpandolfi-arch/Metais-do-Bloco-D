@@ -1,0 +1,2011 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Química Descritiva | Metais do Bloco d</title>
+
+    <style>
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --azul: #12355b;
+            --azul-claro: #1f6f9f;
+            --azul-suave: #eaf4fa;
+            --cinza: #5f6c76;
+            --cinza-claro: #f4f7f9;
+            --branco: #ffffff;
+            --escuro: #17202a;
+            --dourado: #d4a017;
+            --borda: #dce4e9;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: var(--escuro);
+            background: var(--cinza-claro);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* =========================
+           CABEÇALHO
+        ========================== */
+
+        header {
+            background:
+                linear-gradient(rgba(10, 35, 60, 0.92), rgba(10, 35, 60, 0.92)),
+                radial-gradient(circle at top, #287aa8, #10263d);
+
+            color: white;
+            padding-bottom: 70px;
+        }
+
+        nav {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+            padding: 22px 0;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #65c7ff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 22px;
+        }
+
+        nav a {
+            color: white;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #65c7ff;
+        }
+
+        .hero {
+            width: 90%;
+            max-width: 950px;
+            margin: 70px auto 0;
+            text-align: center;
+        }
+
+        .hero .simbolo {
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.35);
+            padding: 10px 18px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            color: #bce8ff;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #65c7ff;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #d9e8f2;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* =========================
+           SEÇÕES
+        ========================== */
+
+        section {
+            padding: 75px 0;
+        }
+
+        section:nth-child(even) {
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--azul);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--cinza);
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .texto {
+            max-width: 900px;
+            margin: auto;
+            color: #39444d;
+        }
+
+        .texto p {
+            margin-bottom: 18px;
+        }
+
+        /* =========================
+           CARDS
+        ========================== */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid var(--borda);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 8px 25px rgba(20, 50, 70, 0.07);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(20, 50, 70, 0.13);
+        }
+
+        .elemento {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 20px;
+        }
+
+        .simbolo-elemento {
+            width: 70px;
+            height: 70px;
+            background: var(--azul);
+            color: white;
+            border-radius: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .elemento h3 {
+            color: var(--azul);
+            font-size: 1.45rem;
+        }
+
+        .elemento small {
+            color: var(--cinza);
+        }
+
+        .card p {
+            color: #4d5962;
+            margin-bottom: 12px;
+        }
+
+        .info {
+            background: var(--azul-suave);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-top: 12px;
+            font-size: 0.93rem;
+        }
+
+        .info strong {
+            color: var(--azul);
+        }
+
+        /* =========================
+           TABELA
+        ========================== */
+
+        .tabela-container {
+            overflow-x: auto;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(20, 50, 70, 0.07);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 850px;
+        }
+
+        th {
+            background: var(--azul);
+            color: white;
+            padding: 16px;
+            text-align: left;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid var(--borda);
+        }
+
+        tr:hover td {
+            background: #f0f7fb;
+        }
+
+
+        /* =========================
+           METAIS NA NATUREZA
+        ========================== */
+
+        .minerais-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 35px;
+        }
+
+        .mineral-card {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--borda);
+            box-shadow: 0 8px 25px rgba(20, 50, 70, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .mineral-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 32px rgba(20, 50, 70, 0.12);
+        }
+
+        .mineral-card img {
+            display: block;
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            background: #f5f7f8;
+        }
+
+        .mineral-content {
+            padding: 16px 18px 18px;
+            text-align: center;
+        }
+
+        .mineral-content h3 {
+            color: var(--azul);
+            font-size: 1.25rem;
+            margin: 0;
+        }
+
+        .mineral-content .formula,
+        .mineral-content p {
+            display: none;
+        }
+
+        .legenda-natureza {
+            display: none;
+        }
+
+        /* =========================
+           APLICAÇÕES
+        ========================== */
+
+        .aplicacoes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .aplicacao {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            border-left: 5px solid var(--azul-claro);
+            box-shadow: 0 7px 20px rgba(20, 50, 70, 0.06);
+        }
+
+        .aplicacao h3 {
+            color: var(--azul);
+            margin-bottom: 8px;
+        }
+
+        .aplicacao h4 {
+            color: var(--azul);
+            margin: 22px 0 10px;
+            font-size: 1.05rem;
+        }
+
+        .aplicacao ul {
+            margin: 0 0 18px 20px;
+            color: #4d5962;
+        }
+
+        .aplicacao li {
+            margin-bottom: 10px;
+        }
+
+        .aplicacao-detalhada {
+            grid-column: 1 / -1;
+        }
+
+        /* =========================
+           DESTAQUE
+        ========================== */
+
+        .destaque {
+            background: linear-gradient(135deg, #12355b, #1e638f);
+            color: white;
+            border-radius: 20px;
+            padding: 45px;
+            margin-top: 30px;
+        }
+
+        .destaque h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .destaque p {
+            color: #e5f2fa;
+        }
+
+        /* =========================
+           REFERÊNCIAS
+        ========================== */
+
+        .referencias {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .referencias li {
+            margin-bottom: 12px;
+            color: #46525b;
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================== */
+
+        footer {
+            background: #0b1d2d;
+            color: #c8d7e2;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        .aplicacao-destaque h4 {
+            color: var(--azul);
+            margin: 22px 0 10px;
+            font-size: 1.05rem;
+        }
+
+        .aplicacao-destaque ul {
+            padding-left: 22px;
+            color: #4d5962;
+        }
+
+        .aplicacao-destaque li {
+            margin-bottom: 10px;
+        }
+
+        .aplicacao-destaque strong {
+            color: var(--azul);
+        }
+
+
+        /* =========================
+           VÍDEO DO INSTAGRAM
+        ========================== */
+
+        .instagram-section {
+            background: white;
+        }
+
+        .instagram-box {
+            max-width: 540px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid var(--borda);
+            border-radius: 16px;
+            padding: 18px;
+            box-shadow: 0 8px 25px rgba(20, 50, 70, 0.07);
+            overflow: hidden;
+        }
+
+        .instagram-box blockquote.instagram-media {
+            margin: 0 auto !important;
+            min-width: 0 !important;
+            width: 100% !important;
+        }
+
+        /* =========================
+           QUIZ
+        ========================== */
+
+        .quiz-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .quiz-question {
+            background: white;
+            border: 1px solid var(--borda);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 22px;
+            box-shadow: 0 8px 25px rgba(20, 50, 70, 0.07);
+        }
+
+        .quiz-question h3 {
+            color: var(--azul);
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 10px;
+        }
+
+        .quiz-option {
+            border: 1px solid var(--borda);
+            background: #f9fbfc;
+            border-radius: 10px;
+            padding: 12px 15px;
+            text-align: left;
+            cursor: pointer;
+            font-size: 0.98rem;
+            transition: 0.25s;
+        }
+
+        .quiz-option:hover {
+            background: var(--azul-suave);
+            border-color: var(--azul-claro);
+        }
+
+        .quiz-option.correct {
+            background: #e9f7ef;
+            border-color: #43a36b;
+        }
+
+        .quiz-option.incorrect {
+            background: #fff0f0;
+            border-color: #d85b5b;
+        }
+
+        .quiz-feedback {
+            display: none;
+            margin-top: 14px;
+            padding: 12px 15px;
+            border-radius: 9px;
+            background: var(--azul-suave);
+            color: #39444d;
+        }
+
+        .quiz-result {
+            background: linear-gradient(135deg, #12355b, #1e638f);
+            color: white;
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 28px;
+        }
+
+        .quiz-result h3 {
+            margin-bottom: 8px;
+        }
+
+        .quiz-button {
+            border: none;
+            background: white;
+            color: var(--azul);
+            font-weight: bold;
+            padding: 12px 22px;
+            border-radius: 9px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        /* =========================
+           ACESSIBILIDADE E MENU MOBILE
+        ========================== */
+
+        .menu-toggle {
+            display: none;
+            border: 1px solid rgba(255,255,255,0.35);
+            background: transparent;
+            color: white;
+            border-radius: 10px;
+            padding: 8px 12px;
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        button, a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .tabela-container {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* =========================
+           RESPONSIVIDADE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            nav {
+                width: 92%;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 12px;
+                position: relative;
+            }
+
+            .menu-toggle {
+                display: block;
+                margin-left: auto;
+            }
+
+            nav ul {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                background: rgba(10, 35, 60, 0.98);
+                border-radius: 12px;
+                padding: 8px 0;
+                margin-top: 4px;
+            }
+
+            nav ul.open {
+                display: flex;
+            }
+
+            nav li {
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                padding: 11px 14px;
+                font-size: 1rem;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .minerais-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .aplicacoes {
+                grid-template-columns: 1fr;
+            }
+
+            .instagram-box {
+                width: 100%;
+                padding: 8px;
+            }
+
+            .instagram-box blockquote.instagram-media {
+                min-width: 0 !important;
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+
+            table {
+                min-width: 700px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                font-size: 15px;
+                overflow-x: hidden;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            header {
+                padding-bottom: 48px;
+            }
+
+            nav {
+                padding: 14px 0;
+            }
+
+            .logo {
+                font-size: 1.05rem;
+            }
+
+            .hero {
+                width: 92%;
+                margin-top: 35px;
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 11vw, 3rem);
+                line-height: 1.05;
+            }
+
+            .hero p {
+                font-size: 0.98rem;
+                line-height: 1.6;
+            }
+
+            section {
+                padding: 45px 0;
+            }
+
+            .section-title {
+                margin-bottom: 28px;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-title p {
+                font-size: 0.95rem;
+            }
+
+            .grid,
+            .minerais-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .card,
+            .quiz-question {
+                padding: 20px;
+                border-radius: 13px;
+            }
+
+            .elemento {
+                gap: 12px;
+            }
+
+            .simbolo-elemento {
+                width: 58px;
+                height: 58px;
+                font-size: 1.45rem;
+                flex-shrink: 0;
+            }
+
+            .elemento h3 {
+                font-size: 1.25rem;
+            }
+
+            .texto {
+                width: 100%;
+            }
+
+            .destaque {
+                padding: 24px 20px;
+                border-radius: 15px;
+            }
+
+            .destaque h3 {
+                font-size: 1.35rem;
+            }
+
+            .aplicacao {
+                padding: 20px;
+            }
+
+            .mineral-card img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .mineral-content {
+                padding: 14px 16px;
+            }
+
+            .quiz-question h3 {
+                font-size: 1.02rem;
+                line-height: 1.5;
+            }
+
+            .quiz-option {
+                width: 100%;
+                min-height: 50px;
+                padding: 14px 15px;
+                font-size: 0.98rem;
+                line-height: 1.4;
+            }
+
+            .quiz-result {
+                padding: 24px 18px;
+            }
+
+            .quiz-button {
+                min-height: 48px;
+                padding: 12px 20px;
+            }
+
+            .instagram-box {
+                padding: 0;
+                border: 0;
+                box-shadow: none;
+                background: transparent;
+            }
+
+            .instagram-box blockquote.instagram-media {
+                margin: 0 auto !important;
+                min-width: 0 !important;
+                width: 100% !important;
+            }
+
+            .tabela-container {
+                border-radius: 10px;
+            }
+
+            table {
+                min-width: 680px;
+            }
+
+            footer {
+                padding: 28px 16px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .container,
+            .hero,
+            nav {
+                width: 94%;
+            }
+
+            .hero h1 {
+                font-size: 1.85rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header id="inicio">
+
+        <nav>
+            <div class="logo">
+                ⚗ <span>Química</span> Descritiva
+            </div>
+
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
+            <ul id="mainMenu">
+                <li><a href="#introducao">Introdução</a></li>
+                <li><a href="#elementos">Elementos</a></li>
+                <li><a href="#natureza">Na natureza</a></li>
+                <li><a href="#instagram">Vídeo</a></li>
+                <li><a href="#comparacao">Comparação</a></li>
+                <li><a href="#aplicacoes">Aplicações</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#referencias">Referências</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero">
+
+            <div class="simbolo">
+                Metais do bloco d
+            </div>
+
+            <h1>
+                Fe · Co · Ru · Rh · Os · <span>Ir</span>
+            </h1>
+
+            <p>
+                Uma abordagem descritiva sobre as propriedades,
+                características, compostos, aplicações e importância
+                dos metais de transição do bloco d.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         INTRODUÇÃO
+    ========================== -->
+
+    <section id="introducao">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Introdução</h2>
+                <p>
+                    Os elementos do bloco d apresentam grande diversidade
+                    química e tecnológica.
+                </p>
+            </div>
+
+            <div class="texto">
+
+                <p>
+                    Os metais de transição ocupam uma região central da
+                    tabela periódica e são caracterizados pelo preenchimento
+                    progressivo dos orbitais d. Essa configuração eletrônica
+                    contribui para uma grande variedade de propriedades
+                    químicas e físicas.
+                </p>
+
+                <p>
+                    Entre suas características estão a possibilidade de
+                    apresentar diferentes estados de oxidação, formação de
+                    compostos de coordenação, atividade catalítica e,
+                    em muitos casos, a formação de compostos coloridos.
+                </p>
+
+                <p>
+                    Neste trabalho são abordados seis elementos do bloco d:
+                    <strong>ferro (Fe), cobalto (Co), rutênio (Ru),
+                    ródio (Rh), ósmio (Os) e irídio (Ir)</strong>.
+                    Esses elementos pertencem às séries de transição
+                    associadas aos grupos 8 e 9 da tabela periódica.
+                </p>
+
+            </div>
+
+            <div class="destaque">
+
+                <h3>Por que estudar esses elementos?</h3>
+
+                <p>
+                    Fe, Co, Ru, Rh, Os e Ir possuem importância científica
+                    e tecnológica. Eles participam de processos catalíticos,
+                    produção de materiais, metalurgia, sistemas eletrônicos
+                    e diversas aplicações industriais.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         METAIS NA NATUREZA
+    ========================== -->
+
+    <section id="natureza">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Metais na natureza</h2>
+            </div>
+
+            <div class="minerais-grid">
+
+                <article class="mineral-card">
+                    <img src="Ferro.jpg" alt="Ferro em sua forma natural" loading="lazy">
+                    <div class="mineral-content">
+                        <h3>Ferro</h3>
+                    </div>
+                </article>
+
+                <article class="mineral-card">
+                    <img src="Cobalto.jpg" alt="Cobalto em sua forma natural" loading="lazy">
+                    <div class="mineral-content">
+                        <h3>Cobalto</h3>
+                    </div>
+                </article>
+
+                <article class="mineral-card">
+                    <img src="Rutenio.jpg" alt="Rutênio em sua forma natural" loading="lazy">
+                    <div class="mineral-content">
+                        <h3>Rutênio</h3>
+                    </div>
+                </article>
+
+                <article class="mineral-card">
+                    <img src="Rodio.jpg" alt="Ródio em sua forma natural" loading="lazy">
+                    <div class="mineral-content">
+                        <h3>Ródio</h3>
+                    </div>
+                </article>
+
+                <article class="mineral-card">
+                    <img src="Osmio.jpg" alt="Ósmio em sua forma natural" loading="lazy">
+                    <div class="mineral-content">
+                        <h3>Ósmio</h3>
+                    </div>
+                </article>
+
+                <article class="mineral-card">
+                    <img src="iridio.jpg" alt="Irídio em sua forma natural" loading="lazy">
+                    <div class="mineral-content">
+                        <h3>Irídio</h3>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- =========================
+         VÍDEO DO INSTAGRAM
+    ========================== -->
+
+    <section id="instagram" class="instagram-section">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Jardim Químico</h2>
+                <p>Conteúdo complementar relacionado ao tema.</p>
+            </div>
+
+            <div class="instagram-box">
+                <blockquote
+                    class="instagram-media"
+                    data-instgrm-permalink="https://www.instagram.com/reel/DLEFX2qsd6n/"
+                    data-instgrm-version="14"
+                    style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:1px; max-width:540px; min-width:326px; padding:0; width:calc(100% - 2px);">
+                </blockquote>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ELEMENTOS
+    ========================== -->
+
+    <section id="elementos">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Os elementos</h2>
+                <p>
+                    Principais características dos seis metais estudados.
+                </p>
+            </div>
+
+
+            <div class="grid">
+
+                <!-- FERRO -->
+
+                <article class="card">
+
+                    <div class="elemento">
+
+                        <div class="simbolo-elemento">
+                            Fe
+                        </div>
+
+                        <div>
+                            <h3>Ferro</h3>
+                            <small>Número atômico 26</small>
+                        </div>
+
+                    </div>
+
+                    <p>
+                        O ferro é um dos metais mais importantes para a
+                        sociedade. É relativamente abundante na crosta
+                        terrestre e possui papel fundamental na produção
+                        de ligas metálicas.
+                    </p>
+
+                    <div class="info">
+                        <strong>Configuração:</strong>
+                        [Ar] 3d⁶ 4s²
+                    </div>
+
+                    <div class="info">
+                        <strong>Estados de oxidação comuns:</strong>
+                        +2 e +3
+                    </div>
+
+                    <div class="info">
+                        <strong>Aplicações:</strong>
+                        aço, construção civil, máquinas e ferramentas.
+                    </div>
+
+                </article>
+
+
+                <!-- COBALTO -->
+
+                <article class="card">
+
+                    <div class="elemento">
+
+                        <div class="simbolo-elemento">
+                            Co
+                        </div>
+
+                        <div>
+                            <h3>Cobalto</h3>
+                            <small>Número atômico 27</small>
+                        </div>
+
+                    </div>
+
+                    <p>
+                        O cobalto é um metal de transição conhecido por
+                        seus compostos coloridos e por sua utilização em
+                        materiais tecnológicos e catalisadores.
+                    </p>
+
+                    <div class="info">
+                        <strong>Configuração:</strong>
+                        [Ar] 3d⁷ 4s²
+                    </div>
+
+                    <div class="info">
+                        <strong>Estados de oxidação:</strong>
+                        +2 e +3 são importantes
+                    </div>
+
+                    <div class="info">
+                        <strong>Aplicações:</strong>
+                        ligas, catalisadores e materiais para baterias.
+                    </div>
+
+                </article>
+
+
+                <!-- RUTÊNIO -->
+
+                <article class="card">
+
+                    <div class="elemento">
+
+                        <div class="simbolo-elemento">
+                            Ru
+                        </div>
+
+                        <div>
+                            <h3>Rutênio</h3>
+                            <small>Número atômico 44</small>
+                        </div>
+
+                    </div>
+
+                    <p>
+                        O rutênio é um metal do grupo da platina,
+                        relativamente raro, utilizado principalmente
+                        em catálise e em materiais resistentes.
+                    </p>
+
+                    <div class="info">
+                        <strong>Configuração:</strong>
+                        [Kr] 4d⁷ 5s¹
+                    </div>
+
+                    <div class="info">
+                        <strong>Estados de oxidação:</strong>
+                        apresenta diversos estados, incluindo +2, +3 e +4
+                    </div>
+
+                    <div class="info">
+                        <strong>Aplicações:</strong>
+                        catalisadores, eletrônica e ligas.
+                    </div>
+
+                </article>
+
+
+                <!-- RÓDIO -->
+
+                <article class="card">
+
+                    <div class="elemento">
+
+                        <div class="simbolo-elemento">
+                            Rh
+                        </div>
+
+                        <div>
+                            <h3>Ródio</h3>
+                            <small>Número atômico 45</small>
+                        </div>
+
+                    </div>
+
+                    <p>
+                        O ródio é um metal precioso do grupo da platina.
+                        É conhecido por sua alta refletividade e resistência
+                        à corrosão.
+                    </p>
+
+                    <div class="info">
+                        <strong>Configuração:</strong>
+                        [Kr] 4d⁸ 5s¹
+                    </div>
+
+                    <div class="info">
+                        <strong>Estado de oxidação importante:</strong>
+                        +3
+                    </div>
+
+                    <div class="info">
+                        <strong>Aplicações:</strong>
+                        catalisadores automotivos, revestimentos e ligas.
+                    </div>
+
+                </article>
+
+
+                <!-- ÓSMIO -->
+
+                <article class="card">
+
+                    <div class="elemento">
+
+                        <div class="simbolo-elemento">
+                            Os
+                        </div>
+
+                        <div>
+                            <h3>Ósmio</h3>
+                            <small>Número atômico 76</small>
+                        </div>
+
+                    </div>
+
+                    <p>
+                        O ósmio é um dos elementos mais densos conhecidos.
+                        Pertence ao grupo da platina e apresenta elevada
+                        resistência e estabilidade em determinadas condições.
+                    </p>
+
+                    <div class="info">
+                        <strong>Configuração:</strong>
+                        [Xe] 4f¹⁴ 5d⁶ 6s²
+                    </div>
+
+                    <div class="info">
+                        <strong>Estados de oxidação:</strong>
+                        +2, +3, +4, +6 e +8
+                    </div>
+
+                    <div class="info">
+                        <strong>Aplicações:</strong>
+                        ligas especiais, instrumentos e catálise.
+                    </div>
+
+                </article>
+
+
+                <!-- IRÍDIO -->
+
+                <article class="card">
+
+                    <div class="elemento">
+
+                        <div class="simbolo-elemento">
+                            Ir
+                        </div>
+
+                        <div>
+                            <h3>Irídio</h3>
+                            <small>Número atômico 77</small>
+                        </div>
+
+                    </div>
+
+                    <p>
+                        O irídio é um metal precioso extremamente resistente
+                        à corrosão. É encontrado em pequenas quantidades e
+                        apresenta grande estabilidade química.
+                    </p>
+
+                    <div class="info">
+                        <strong>Configuração:</strong>
+                        [Xe] 4f¹⁴ 5d⁷ 6s²
+                    </div>
+
+                    <div class="info">
+                        <strong>Estados de oxidação:</strong>
+                        +3 e +4 são importantes
+                    </div>
+
+                    <div class="info">
+                        <strong>Aplicações:</strong>
+                        catalisadores, equipamentos especiais e eletrodos.
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         COMPARAÇÃO
+    ========================== -->
+
+    <section id="comparacao">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Comparação dos elementos</h2>
+
+                <p>
+                    Uma visão geral das principais propriedades dos elementos estudados.
+                </p>
+
+            </div>
+
+            <div class="tabela-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Elemento</th>
+                            <th>Símbolo</th>
+                            <th>Nº atômico</th>
+                            <th>Configuração resumida</th>
+                            <th>Estados comuns</th>
+                            <th>Principal destaque</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Ferro</td>
+                            <td><strong>Fe</strong></td>
+                            <td>26</td>
+                            <td>[Ar] 3d⁶ 4s²</td>
+                            <td>+2, +3</td>
+                            <td>Metalurgia</td>
+                        </tr>
+
+                        <tr>
+                            <td>Cobalto</td>
+                            <td><strong>Co</strong></td>
+                            <td>27</td>
+                            <td>[Ar] 3d⁷ 4s²</td>
+                            <td>+2, +3</td>
+                            <td>Ligas e catálise</td>
+                        </tr>
+
+                        <tr>
+                            <td>Rutênio</td>
+                            <td><strong>Ru</strong></td>
+                            <td>44</td>
+                            <td>[Kr] 4d⁷ 5s¹</td>
+                            <td>+2, +3, +4</td>
+                            <td>Catálise</td>
+                        </tr>
+
+                        <tr>
+                            <td>Ródio</td>
+                            <td><strong>Rh</strong></td>
+                            <td>45</td>
+                            <td>[Kr] 4d⁸ 5s¹</td>
+                            <td>+3</td>
+                            <td>Catalisadores</td>
+                        </tr>
+
+                        <tr>
+                            <td>Ósmio</td>
+                            <td><strong>Os</strong></td>
+                            <td>76</td>
+                            <td>[Xe] 4f¹⁴ 5d⁶ 6s²</td>
+                            <td>+2 a +8</td>
+                            <td>Alta densidade</td>
+                        </tr>
+
+                        <tr>
+                            <td>Irídio</td>
+                            <td><strong>Ir</strong></td>
+                            <td>77</td>
+                            <td>[Xe] 4f¹⁴ 5d⁷ 6s²</td>
+                            <td>+3, +4</td>
+                            <td>Resistência à corrosão</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROPRIEDADES GERAIS
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Características químicas</h2>
+
+                <p>
+                    Propriedades que ajudam a compreender o comportamento
+                    dos metais de transição.
+                </p>
+
+            </div>
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <h3>⚛ Estados de oxidação</h3>
+
+                    <p>
+                        Os metais do bloco d podem apresentar mais de um
+                        estado de oxidação devido à proximidade energética
+                        entre os orbitais ns e (n−1)d.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🎨 Compostos coloridos</h3>
+
+                    <p>
+                        Muitos íons de metais de transição formam compostos
+                        coloridos. As cores estão relacionadas às transições
+                        eletrônicas e à estrutura dos complexos.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🔗 Complexos de coordenação</h3>
+
+                    <p>
+                        Esses elementos podem se ligar a moléculas ou íons
+                        chamados ligantes, formando complexos de coordenação
+                        com diferentes geometrias.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>⚙ Catálise</h3>
+
+                    <p>
+                        Muitos metais de transição são excelentes
+                        catalisadores, pois podem interagir com reagentes
+                        e facilitar diferentes etapas de uma reação química.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🧲 Propriedades magnéticas</h3>
+
+                    <p>
+                        A presença de elétrons desemparelhados nos orbitais d
+                        pode gerar propriedades paramagnéticas e outras
+                        características magnéticas.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🔬 Química de coordenação</h3>
+
+                    <p>
+                        A química dos metais de transição é fundamental para
+                        compreender compostos utilizados em catálise,
+                        materiais e processos biológicos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         APLICAÇÕES
+    ========================== -->
+
+    <section id="aplicacoes">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Aplicações e importância</h2>
+
+                <p>
+                    Esses elementos possuem funções importantes em diferentes áreas.
+                </p>
+
+            </div>
+
+            <div class="aplicacoes">
+
+                <div class="aplicacao aplicacao-detalhada">
+
+                    <h3>Ferro — Fe</h3>
+
+                    <p>
+                        O ferro é o metal mais usado no mundo, <strong>essencial para a
+                        fabricação de aço, estruturas de construção, veículos e ferramentas.
+                        Na biologia, ele é vital para formar a hemoglobina, que transporta
+                        oxigênio no sangue</strong>. Sua abundância e resistência sustentam a
+                        economia e a vida humana.
+                    </p>
+
+                    <h4>Aplicações Industriais</h4>
+                    <ul>
+                        <li><strong>Produção de Aço:</strong> Base para vigas de prédios, pontes, trilhos e chapas metálicas.</li>
+                        <li><strong>Setor de Transporte:</strong> Fabricação de carros, navios, trens e aviões.</li>
+                        <li><strong>Ferramentas e Máquinas:</strong> Uso em peças de motores, eletrodomésticos e utensílios.</li>
+                        <li><strong>Tratamento de Água:</strong> O cloreto de ferro ajuda a purificar a água que chega às casas.</li>
+                    </ul>
+
+                    <h4>Importância Biológica</h4>
+                    <ul>
+                        <li><strong>Transporte de Oxigênio:</strong> Compõe os glóbulos vermelhos para levar oxigênio aos órgãos.</li>
+                        <li><strong>Energia do Corpo:</strong> Ajuda no metabolismo celular e na produção de DNA.</li>
+                        <li><strong>Prevenção de Doenças:</strong> Evita a anemia, mantendo a imunidade e a disposição em dia.</li>
+                    </ul>
+
+                </div>
+
+                <div class="aplicacao aplicacao-detalhada">
+
+                    <h3>Cobalto — Co</h3>
+
+                    <h4>Principais Aplicações do Cobalto</h4>
+                    <ul>
+                        <li><strong>Baterias:</strong> Presente em baterias recarregáveis de celulares, computadores e carros elétricos, garantindo estabilidade térmica e alta energia.</li>
+                        <li><strong>Ligas Metálicas:</strong> Cria superligas resistentes ao calor extremo e corrosão, usadas em motores de aviões e turbinas a gás.</li>
+                        <li><strong>Medicina (Cobalto-60):</strong> Usado em radioterapia para combater o câncer e na esterilização de materiais cirúrgicos.</li>
+                        <li><strong>Pigmentos e Vidros:</strong> Cria o famoso tom azul profundo em cerâmicas, tintas e vidros.</li>
+                        <li><strong>Catalisadores:</strong> Atua na refinaria de petróleo e processos químicos industriais.</li>
+                    </ul>
+
+                    <h4>Importância</h4>
+                    <ul>
+                        <li><strong>Tecnologia Verde:</strong> É um pilar para a descarbonização e expansão dos veículos elétricos.</li>
+                        <li><strong>Saúde Humana:</strong> É parte fundamental da estrutura da <strong>vitamina B12</strong>, essencial para o sangue e o sistema nervoso.</li>
+                        <li><strong>Indústria Estratégica:</strong> Considerado um mineral crítico e de alto valor geopolítico para a defesa e eletrônica global.</li>
+                    </ul>
+
+                </div>
+
+                <div class="aplicacao aplicacao-detalhada">
+
+                    <h3>Rutênio — Ru</h3>
+
+                    <p>
+                        O rutênio (Ru) é um metal raro do grupo da platina. Ele é muito importante
+                        na alta tecnologia e na indústria porque aumenta a dureza, resiste à corrosão
+                        e atua como um forte catalisador em reações químicas.
+                    </p>
+
+                    <h4>Principais aplicações</h4>
+                    <ul>
+                        <li><strong>Ligas metálicas:</strong> Misturado à platina ou ao paládio, deixa esses metais mais duros e resistentes para uso em joias e contatos elétricos. Em ligas com o titânio, melhora muito a proteção contra corrosão.</li>
+                        <li><strong>Eletrônica:</strong> Usado em discos rígidos de computadores, chips e resistores de precisão.</li>
+                        <li><strong>Catálise química:</strong> Ajuda a acelerar processos industriais na fabricação de ácido acético e reações orgânicas complexas.</li>
+                        <li><strong>Energia solar e inovação:</strong> Estudado no desenvolvimento de células solares avançadas e sistemas de conversão de energia limpa.</li>
+                    </ul>
+
+                    <h4>Por que ele é importante</h4>
+                    <ul>
+                        <li><strong>Durabilidade:</strong> Aumenta a vida útil de peças eletrônicas e materiais expostos a desgaste severo.</li>
+                        <li><strong>Eficiência industrial:</strong> Permite reações químicas mais limpas e eficientes na indústria química.</li>
+                        <li><strong>Escassez:</strong> Por ser um metal extremamente raro na crosta terrestre, seu uso é otimizado em pequenas quantidades vitais para a tecnologia moderna.</li>
+                    </ul>
+
+                </div>
+
+                <div class="aplicacao aplicacao-destaque">
+
+                    <h3>Ródio — Rh</h3>
+
+                    <p>
+                        O ródio (Rh) atua como um catalisador eficiente na
+                        indústria farmacêutica e química para acelerar reações
+                        de síntese assimétrica, permitindo a criação de
+                        ligações químicas precisas e moléculas específicas
+                        complexas usadas em medicamentos e insumos avançados.
+                    </p>
+
+                    <h4>Como o Ródio Atua na Indústria</h4>
+                    <ul>
+                        <li><strong>Catálise em reações:</strong> Acelera processos químicos sem ser consumido, gerando compostos com alta pureza estrutural.</li>
+                        <li><strong>Síntese de fármacos:</strong> Permite direcionar a geometria molecular (quiralidade), essencial para a eficácia de medicamentos e princípios ativos.</li>
+                        <li><strong>Hidroformilação:</strong> Transforma matérias-primas simples (como alcenos) em intermediários complexos para a produção de aldeídos e álcoois.</li>
+                        <li><strong>Investigação oncológica:</strong> Compostos de coordenação de ródio são estudados na criação de metalofármacos antitumorais com ação similar à da cisplatina.</li>
+                    </ul>
+
+                    <h4>Outras Aplicações Principais</h4>
+                    <ul>
+                        <li><strong>Conversores catalíticos:</strong> Reduzem a emissão de gases poluentes em automóveis.</li>
+                        <li><strong>Revestimentos (banho de ródio):</strong> Protegem joias de ouro branco e prata contra oxidação, dando brilho espelhado.</li>
+                        <li><strong>Indústria do vidro:</strong> Utilizado em equipamentos que suportam altas temperaturas para fabricação de fibra de vidro.</li>
+                    </ul>
+
+                </div>
+
+                <div class="aplicacao aplicacao-detalhada">
+
+                    <h3>Ósmio — Os</h3>
+
+                    <p>
+                        O ósmio é o elemento natural mais denso do planeta, caracterizado
+                        por um tom branco-azulado, extrema dureza e alta resistência à corrosão.
+                        Ele <strong>é essencial em ligas de alta durabilidade para instrumentos
+                        de precisão, implantes médicos e como catalisador em reações químicas
+                        avançadas</strong>.
+                    </p>
+
+                    <h4>Principais Aplicações</h4>
+                    <ul>
+                        <li><strong>Ligas metálicas duráveis:</strong> Combinado com platina ou irídio, é usado em marca-passos, válvulas pulmonares artificiais, contatos elétricos e pontas de canetas-tinteiro.</li>
+                        <li><strong>Catálise industrial:</strong> Atua acelerando reações químicas na produção de compostos orgânicos e processos de hidrogenação.</li>
+                        <li><strong>Análise biológica e forense:</strong> O composto tetróxido de ósmio serve para colorir tecidos em microscopia e revelar impressões digitais.</li>
+                        <li><strong>Joalheria e investimento:</strong> O ósmio cristalizado ganha espaço em joias exclusivas e como ativo financeiro devido à sua raridade.</li>
+                    </ul>
+
+                    <h4>Importância</h4>
+                    <p>
+                        A importância do ósmio reside em suas propriedades físicas e químicas
+                        únicas, como suportar altas temperaturas e resistir a ácidos severos
+                        onde outros metais falham. Por ser um subproduto extremamente escasso
+                        da extração de platina, sua utilidade é altamente especializada e
+                        restrita a setores de ponta.
+                    </p>
+
+                </div>
+
+                <div class="aplicacao aplicacao-detalhada">
+
+                    <h3>Irídio — Ir</h3>
+
+                    <p>
+                        O irídio é um metal de transição extremamente denso, raro e o elemento mais resistente à corrosão conhecido, suportando altas temperaturas sem oxidar. Suas principais aplicações envolvem a fabricação de velas de ignição de alta durabilidade, cadinhos para laboratório e ligas metálicas especiais.
+                    </p>
+
+                    <h4>Aplicações Principais</h4>
+                    <ul>
+                        <li><strong>Velas de ignição:</strong> Utilizado em veículos e aeronaves na forma de pontas de irídio devido à alta resistência ao desgaste elétrico e térmico.</li>
+                        <li><strong>Ligas metálicas:</strong> Combinado com a platina para aumentar a dureza e a durabilidade em joias, equipamentos cirúrgicos e contatos elétricos.</li>
+                        <li><strong>Cadinhos de alta temperatura:</strong> Empregado em recipientes laboratoriais que fundem materiais refratários em fornos extremos.</li>
+                        <li><strong>Medicina e Indústria:</strong> O isótopo irídio-192 atua no tratamento de câncer (braquiterapia) e em radiografias industriais para detectar falhas em estruturas de metal.</li>
+                        <li><strong>Catálise:</strong> Atua como catalisador em reações químicas industriais complexas.</li>
+                    </ul>
+
+                    <h4>Importância</h4>
+                    <ul>
+                        <li><strong>Resistência Química:</strong> Não sofre corrosão nem mesmo pela água régia, superando a nobreza do ouro e da platina.</li>
+                        <li><strong>Marcador Científico:</strong> Sua alta concentração em camadas geológicas da Terra ajudou a comprovar a teoria do impacto de asteroide na extinção dos dinossauros.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         QUIZ
+    ========================== -->
+
+    <section id="quiz">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quiz</h2>
+                <p>Teste seus conhecimentos sobre os metais do bloco d apresentados nesta página.</p>
+            </div>
+
+            <div class="quiz-container" id="quizContainer">
+                <div class="quiz-question" data-answer="B">
+                    <h3>1. Qual destes elementos é o mais abundante e possui papel fundamental na produção de aço?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-value="A">A) Ródio</button>
+                        <button class="quiz-option" data-value="B">B) Ferro</button>
+                        <button class="quiz-option" data-value="C">C) Irídio</button>
+                        <button class="quiz-option" data-value="D">D) Rutênio</button>
+                    </div>
+                    <div class="quiz-feedback">O ferro é fundamental para a fabricação de aço e possui grande importância industrial.</div>
+                </div>
+
+                <div class="quiz-question" data-answer="C">
+                    <h3>2. Qual metal é utilizado em baterias recarregáveis e também faz parte da vitamina B12?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-value="A">A) Ósmio</button>
+                        <button class="quiz-option" data-value="B">B) Ródio</button>
+                        <button class="quiz-option" data-value="C">C) Cobalto</button>
+                        <button class="quiz-option" data-value="D">D) Ferro</button>
+                    </div>
+                    <div class="quiz-feedback">O cobalto está presente em baterias e integra a estrutura da vitamina B12.</div>
+                </div>
+
+                <div class="quiz-question" data-answer="A">
+                    <h3>3. Qual metal do grupo da platina é conhecido por atuar como catalisador e ser usado em aplicações eletrônicas?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-value="A">A) Rutênio</button>
+                        <button class="quiz-option" data-value="B">B) Ferro</button>
+                        <button class="quiz-option" data-value="C">C) Cobalto</button>
+                        <button class="quiz-option" data-value="D">D) Ósmio</button>
+                    </div>
+                    <div class="quiz-feedback">O rutênio pertence ao grupo da platina e possui aplicações em catálise e eletrônica.</div>
+                </div>
+
+                <div class="quiz-question" data-answer="D">
+                    <h3>4. Qual metal é especialmente importante em catalisadores automotivos para o tratamento de gases de escape?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-value="A">A) Ferro</button>
+                        <button class="quiz-option" data-value="B">B) Ósmio</button>
+                        <button class="quiz-option" data-value="C">C) Irídio</button>
+                        <button class="quiz-option" data-value="D">D) Ródio</button>
+                    </div>
+                    <div class="quiz-feedback">O ródio é utilizado em catalisadores automotivos para o tratamento de gases de escape.</div>
+                </div>
+
+                <div class="quiz-question" data-answer="B">
+                    <h3>5. Qual é uma característica marcante do ósmio apresentada na página?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-value="A">A) Ser o metal mais abundante da crosta</button>
+                        <button class="quiz-option" data-value="B">B) Apresentar densidade extremamente elevada</button>
+                        <button class="quiz-option" data-value="C">C) Formar a vitamina B12</button>
+                        <button class="quiz-option" data-value="D">D) Ser usado principalmente na fabricação de aço</button>
+                    </div>
+                    <div class="quiz-feedback">O ósmio é destacado por sua densidade extremamente elevada e por suas aplicações especializadas.</div>
+                </div>
+
+                <div class="quiz-question" data-answer="C">
+                    <h3>6. Qual metal é usado em velas de ignição de alta durabilidade?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-value="A">A) Rutênio</button>
+                        <button class="quiz-option" data-value="B">B) Cobalto</button>
+                        <button class="quiz-option" data-value="C">C) Irídio</button>
+                        <button class="quiz-option" data-value="D">D) Ferro</button>
+                    </div>
+                    <div class="quiz-feedback">O irídio é empregado em pontas de velas de ignição devido à sua resistência ao desgaste elétrico e térmico.</div>
+                </div>
+
+                <div class="quiz-question" data-answer="A">
+                    <h3>7. Qual propriedade do ródio explica sua importância em catalisadores e revestimentos?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-value="A">A) Alta refletividade e resistência à corrosão</button>
+                        <button class="quiz-option" data-value="B">B) Baixa densidade e alta reatividade</button>
+                        <button class="quiz-option" data-value="C">C) Grande abundância na crosta terrestre</button>
+                        <button class="quiz-option" data-value="D">D) Capacidade de formar a hemoglobina</button>
+                    </div>
+                    <div class="quiz-feedback">O ródio é conhecido por sua alta refletividade e resistência à corrosão, características importantes em suas aplicações.</div>
+                </div>
+
+                <div class="quiz-question" data-answer="D">
+                    <h3>8. Em qual área o ferro possui uma função biológica essencial?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-value="A">A) Formação de vitamina B12</button>
+                        <button class="quiz-option" data-value="B">B) Produção de pigmentos azuis</button>
+                        <button class="quiz-option" data-value="C">C) Fabricação de velas de ignição</button>
+                        <button class="quiz-option" data-value="D">D) Formação da hemoglobina</button>
+                    </div>
+                    <div class="quiz-feedback">O ferro é essencial para a formação da hemoglobina, responsável pelo transporte de oxigênio no sangue.</div>
+                </div>
+
+                <div class="quiz-question" data-answer="B">
+                    <h3>9. Qual elemento é utilizado em radioterapia e na esterilização de materiais cirúrgicos na forma de Cobalto-60?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-value="A">A) Irídio</button>
+                        <button class="quiz-option" data-value="B">B) Cobalto</button>
+                        <button class="quiz-option" data-value="C">C) Ródio</button>
+                        <button class="quiz-option" data-value="D">D) Rutênio</button>
+                    </div>
+                    <div class="quiz-feedback">O Cobalto-60 é apresentado na página como aplicação médica em radioterapia e esterilização de materiais cirúrgicos.</div>
+                </div>
+
+                <div class="quiz-question" data-answer="C">
+                    <h3>10. Qual elemento é descrito como extremamente resistente à corrosão e utilizado em cadinhos de alta temperatura?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-value="A">A) Cobalto</button>
+                        <button class="quiz-option" data-value="B">B) Rutênio</button>
+                        <button class="quiz-option" data-value="C">C) Irídio</button>
+                        <button class="quiz-option" data-value="D">D) Ferro</button>
+                    </div>
+                    <div class="quiz-feedback">O irídio é empregado em cadinhos de alta temperatura e se destaca pela elevada resistência à corrosão.</div>
+                </div>
+
+                <div class="quiz-result" id="quizResult" style="display:none;">
+                    <h3>Resultado</h3>
+                    <p id="quizScore"></p>
+                    <button class="quiz-button" onclick="location.reload()">Refazer quiz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         CONCLUSÃO
+    ========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Conclusão</h2>
+            </div>
+
+            <div class="texto">
+
+                <p>
+                    O estudo de Fe, Co, Ru, Rh, Os e Ir demonstra a diversidade
+                    química dos metais do bloco d. Embora pertençam à mesma
+                    região da tabela periódica, esses elementos apresentam
+                    diferenças importantes em abundância, propriedades
+                    físicas, estados de oxidação e aplicações.
+                </p>
+
+                <p>
+                    O ferro e o cobalto possuem grande relevância industrial,
+                    enquanto rutênio, ródio, ósmio e irídio apresentam
+                    propriedades que os tornam particularmente importantes
+                    em aplicações especializadas e na química de metais
+                    preciosos.
+                </p>
+
+                <p>
+                    Dessa forma, compreender a estrutura eletrônica e as
+                    propriedades dos metais de transição é essencial para
+                    entender seu comportamento químico e suas aplicações
+                    em ciência, tecnologia e indústria.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         REFERÊNCIAS
+    ========================== -->
+
+    <section id="referencias">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Referências</h2>
+
+                <p>
+                    Fontes recomendadas para aprofundamento do conteúdo.
+                </p>
+
+            </div>
+
+            <div class="referencias">
+
+                <ul>
+
+                    <li>
+                        HOUSECROFT, C. E.; SHARPE, A. G.
+                        <strong>Inorganic Chemistry</strong>.
+                        Pearson.
+                    </li>
+
+                    <li>
+                        MIESSLER, G. L.; FISCHER, P. J.; TARR, D. A.
+                        <strong>Inorganic Chemistry</strong>.
+                        Pearson.
+                    </li>
+
+                    <li>
+                        ATKINS, P.; OVERTON, T.; ROURKE, J.; WELLER, M.;
+                        ARMSTRONG, F.
+                        <strong>Inorganic Chemistry</strong>.
+                        Oxford University Press.
+                    </li>
+
+                    <li>
+                        IUPAC — International Union of Pure and Applied Chemistry.
+                    </li>
+
+                    <li>
+                        Royal Society of Chemistry — Periodic Table.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer>
+
+        <p>
+            <strong>Química Descritiva — Metais do Bloco d</strong>
+        </p>
+
+        <p>
+            Fe · Co · Ru · Rh · Os · Ir
+        </p>
+
+        <p>
+            Trabalho acadêmico
+        </p>
+
+    </footer>
+
+
+    <script async src="https://www.instagram.com/embed.js"></script>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainMenu = document.getElementById('mainMenu');
+
+        if (menuToggle && mainMenu) {
+            menuToggle.addEventListener('click', () => {
+                const isOpen = mainMenu.classList.toggle('open');
+                menuToggle.setAttribute('aria-expanded', isOpen);
+                menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+            });
+
+            mainMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mainMenu.classList.remove('open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.setAttribute('aria-label', 'Abrir menu');
+                });
+            });
+        }
+    </script>
+
+    <script>
+        const questions = document.querySelectorAll('.quiz-question');
+        let answered = 0;
+        let score = 0;
+
+        questions.forEach(question => {
+            const options = question.querySelectorAll('.quiz-option');
+            const answer = question.dataset.answer;
+            const feedback = question.querySelector('.quiz-feedback');
+
+            options.forEach(option => {
+                option.addEventListener('click', () => {
+                    if (question.dataset.done === 'true') return;
+                    question.dataset.done = 'true';
+                    answered++;
+
+                    options.forEach(item => item.disabled = true);
+                    if (option.dataset.value === answer) {
+                        option.classList.add('correct');
+                        score++;
+                    } else {
+                        option.classList.add('incorrect');
+                        question.querySelector(`[data-value="${answer}"]`).classList.add('correct');
+                    }
+                    feedback.style.display = 'block';
+
+                    if (answered === questions.length) {
+                        const result = document.getElementById('quizResult');
+                        const scoreText = document.getElementById('quizScore');
+                        scoreText.textContent = `Você acertou ${score} de ${questions.length} questões.`;
+                        result.style.display = 'block';
+                        result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
