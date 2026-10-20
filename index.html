@@ -34,7 +34,12 @@
             font-family: Arial, Helvetica, sans-serif;
             line-height: 1.7;
             color: var(--escuro);
-            background: var(--cinza-claro);
+            background-color: #f4f9fc;
+            background-image: url("laboratorio-watermark.svg");
+            background-position: center top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         a {
@@ -140,7 +145,8 @@
         }
 
         section:nth-child(even) {
-            background: white;
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(1.5px);
         }
 
         .section-title {
@@ -307,6 +313,22 @@
             height: 270px;
             object-fit: cover;
             background: #f5f7f8;
+        }
+
+        .mineral-content p {
+            margin-top: 8px;
+            color: var(--cinza);
+            font-size: 0.92rem;
+        }
+
+        .jardim-explicacao {
+            margin: 0 auto 28px;
+            max-width: 900px;
+            padding: 22px;
+            border-left: 4px solid var(--dourado);
+            border-radius: 8px;
+            background: var(--branco);
+            box-shadow: 0 4px 16px rgba(18, 53, 91, 0.07);
         }
 
         .mineral-content {
@@ -955,6 +977,7 @@
                     <img src="Ferro.jpg" alt="Ferro em sua forma natural" loading="lazy">
                     <div class="mineral-content">
                         <h3>Ferro</h3>
+                        <p>Magnetita e hematita são minérios importantes de ferro.</p>
                     </div>
                 </article>
 
@@ -962,6 +985,7 @@
                     <img src="Cobalto.jpg" alt="Cobalto em sua forma natural" loading="lazy">
                     <div class="mineral-content">
                         <h3>Cobalto</h3>
+                        <p>A cobaltita é um dos minerais associados ao cobalto.</p>
                     </div>
                 </article>
 
@@ -969,6 +993,7 @@
                     <img src="Rutenio.jpg" alt="Rutênio em sua forma natural" loading="lazy">
                     <div class="mineral-content">
                         <h3>Rutênio</h3>
+                        <p>O rutênio costuma ocorrer associado a minérios de metais do grupo da platina.</p>
                     </div>
                 </article>
 
@@ -976,6 +1001,7 @@
                     <img src="Rodio.jpg" alt="Ródio em sua forma natural" loading="lazy">
                     <div class="mineral-content">
                         <h3>Ródio</h3>
+                        <p>O ródio é raro e geralmente é obtido como subproduto do processamento de minérios de platina e níquel.</p>
                     </div>
                 </article>
 
@@ -983,6 +1009,7 @@
                     <img src="Osmio.jpg" alt="Ósmio em sua forma natural" loading="lazy">
                     <div class="mineral-content">
                         <h3>Ósmio</h3>
+                        <p>O ósmio pode ocorrer associado a minerais do grupo da platina.</p>
                     </div>
                 </article>
 
@@ -990,6 +1017,7 @@
                     <img src="iridio.jpg" alt="Irídio em sua forma natural" loading="lazy">
                     <div class="mineral-content">
                         <h3>Irídio</h3>
+                        <p>O irídio é raro e costuma ocorrer junto a outros metais do grupo da platina.</p>
                     </div>
                 </article>
 
@@ -1012,7 +1040,24 @@
 
             <div class="section-title">
                 <h2>Jardim Químico</h2>
-                <p>Conteúdo complementar relacionado ao tema.</p>
+                <p>Uma demonstração de reações de precipitação e fenômenos osmóticos.</p>
+            </div>
+
+            <div class="texto jardim-explicacao">
+                <p>
+                    O jardim químico forma-se quando cristais de sais metálicos,
+                    como sais de ferro(II) ou cobalto(II), são colocados numa
+                    solução de silicato de sódio (Na₂SiO₃). A reação na superfície
+                    dos cristais produz membranas e precipitados de silicatos
+                    metálicos, que podem crescer em estruturas semelhantes a
+                    plantas.
+                </p>
+                <p>
+                    O crescimento é influenciado pela diferença de concentração
+                    entre o interior e o exterior das membranas, pela osmose e
+                    pela entrada de solução. A aparência final depende dos sais
+                    utilizados e das condições do experimento.
+                </p>
             </div>
 
             <div class="instagram-box">
@@ -1065,10 +1110,12 @@
                     </div>
 
                     <p>
-                        O ferro é um dos metais mais importantes para a
-                        sociedade. É relativamente abundante na crosta
-                        terrestre e possui papel fundamental na produção
-                        de ligas metálicas.
+                        Os estados de oxidação +2 e +3 participam de sistemas de oxirredução
+                        e permitem a formação de complexos, como os íons
+                        hexacianoferrato. Biologicamente, o ferro integra a
+                        hemoglobina, responsável pelo transporte de oxigênio.
+                        Na indústria, é essencial à produção do aço a partir
+                        de minérios como a hematita.
                     </p>
 
                     <div class="info">
@@ -1107,9 +1154,11 @@
                     </div>
 
                     <p>
-                        O cobalto é um metal de transição conhecido por
-                        seus compostos coloridos e por sua utilização em
-                        materiais tecnológicos e catalisadores.
+                        A química do cobalto é importante para a Teoria do Campo Cristalino
+                        e para a química de coordenação, incluindo os complexos
+                        de cobalto(III) estudados por Alfred Werner. Na biologia,
+                        integra a vitamina B12 (cobalamina); na indústria, é usado
+                        em superligas resistentes a altas temperaturas.
                     </p>
 
                     <div class="info">
@@ -1148,9 +1197,11 @@
                     </div>
 
                     <p>
-                        O rutênio é um metal do grupo da platina,
-                        relativamente raro, utilizado principalmente
-                        em catálise e em materiais resistentes.
+                        O rutênio é um metal do grupo da platina cuja configuração eletrônica
+                        é frequentemente representada por [Kr] 4d⁷ 5s¹. É estudado
+                        em catálise homogênea, incluindo os catalisadores de Grubbs
+                        usados na metátese de olefinas, e em células solares
+                        sensibilizadas por corante (DSSC).
                     </p>
 
                     <div class="info">
@@ -1189,9 +1240,10 @@
                     </div>
 
                     <p>
-                        O ródio é um metal precioso do grupo da platina.
-                        É conhecido por sua alta refletividade e resistência
-                        à corrosão.
+                        O ródio apresenta configuração eletrônica [Kr] 4d⁸ 5s¹. Entre suas
+                        aplicações está o catalisador de Wilkinson, [RhCl(PPh₃)₃],
+                        empregado na hidrogenação de alquenos, além do uso
+                        importante em conversores catalíticos automotivos.
                     </p>
 
                     <div class="info">
@@ -1230,9 +1282,10 @@
                     </div>
 
                     <p>
-                        O ósmio é um dos elementos mais densos conhecidos.
-                        Pertence ao grupo da platina e apresenta elevada
-                        resistência e estabilidade em determinadas condições.
+                        O ósmio é um dos elementos de maior densidade, indicada aqui como
+                        22,59 g/cm³. No tetróxido de ósmio (OsO₄), apresenta estado
+                        de oxidação +8; esse composto é um agente oxidante usado
+                        em reações como a di-hidroxilação de alcenos.
                     </p>
 
                     <div class="info">
@@ -1271,9 +1324,11 @@
                     </div>
 
                     <p>
-                        O irídio é um metal precioso extremamente resistente
-                        à corrosão. É encontrado em pequenas quantidades e
-                        apresenta grande estabilidade química.
+                        O irídio apresenta principalmente os estados de oxidação +3 e +4 e
+                        destaca-se pela resistência à corrosão. Historicamente,
+                        foi usado em uma liga associada ao protótipo internacional
+                        do quilograma. Na catálise, destaca-se também o complexo
+                        de Crabtree.
                     </p>
 
                     <div class="info">
@@ -1313,88 +1368,32 @@
                 <h2>Comparação dos elementos</h2>
 
                 <p>
-                    Uma visão geral das principais propriedades dos elementos estudados.
+                    Comparação de propriedades físicas e químicas dos seis metais estudados.
                 </p>
 
             </div>
 
             <div class="tabela-container">
-
                 <table>
-
                     <thead>
-
                         <tr>
-                            <th>Elemento</th>
-                            <th>Símbolo</th>
-                            <th>Nº atômico</th>
-                            <th>Configuração resumida</th>
-                            <th>Estados comuns</th>
-                            <th>Principal destaque</th>
+                            <th>Elemento / Símbolo</th>
+                            <th>Raio atômico (pm)</th>
+                            <th>Eletronegatividade (Pauling)</th>
+                            <th>Densidade (g/cm³)</th>
+                            <th>Fusão / ebulição (°C)</th>
+                            <th>Estados de oxidação e geometrias comuns</th>
                         </tr>
-
                     </thead>
-
                     <tbody>
-
-                        <tr>
-                            <td>Ferro</td>
-                            <td><strong>Fe</strong></td>
-                            <td>26</td>
-                            <td>[Ar] 3d⁶ 4s²</td>
-                            <td>+2, +3</td>
-                            <td>Metalurgia</td>
-                        </tr>
-
-                        <tr>
-                            <td>Cobalto</td>
-                            <td><strong>Co</strong></td>
-                            <td>27</td>
-                            <td>[Ar] 3d⁷ 4s²</td>
-                            <td>+2, +3</td>
-                            <td>Ligas e catálise</td>
-                        </tr>
-
-                        <tr>
-                            <td>Rutênio</td>
-                            <td><strong>Ru</strong></td>
-                            <td>44</td>
-                            <td>[Kr] 4d⁷ 5s¹</td>
-                            <td>+2, +3, +4</td>
-                            <td>Catálise</td>
-                        </tr>
-
-                        <tr>
-                            <td>Ródio</td>
-                            <td><strong>Rh</strong></td>
-                            <td>45</td>
-                            <td>[Kr] 4d⁸ 5s¹</td>
-                            <td>+3</td>
-                            <td>Catalisadores</td>
-                        </tr>
-
-                        <tr>
-                            <td>Ósmio</td>
-                            <td><strong>Os</strong></td>
-                            <td>76</td>
-                            <td>[Xe] 4f¹⁴ 5d⁶ 6s²</td>
-                            <td>+2 a +8</td>
-                            <td>Alta densidade</td>
-                        </tr>
-
-                        <tr>
-                            <td>Irídio</td>
-                            <td><strong>Ir</strong></td>
-                            <td>77</td>
-                            <td>[Xe] 4f¹⁴ 5d⁷ 6s²</td>
-                            <td>+3, +4</td>
-                            <td>Resistência à corrosão</td>
-                        </tr>
-
+                        <tr><td>Ferro (Fe)</td><td>126</td><td>1,83</td><td>7,87</td><td>1538 / 2862</td><td>+2, +3 (octaédrica, tetraédrica)</td></tr>
+                        <tr><td>Cobalto (Co)</td><td>125</td><td>1,88</td><td>8,90</td><td>1495 / 2927</td><td>+2, +3 (octaédrica, tetraédrica)</td></tr>
+                        <tr><td>Rutênio (Ru)</td><td>134</td><td>2,20</td><td>12,45</td><td>2334 / 4150</td><td>+3, +4, +8 (octaédrica)</td></tr>
+                        <tr><td>Ródio (Rh)</td><td>134</td><td>2,28</td><td>12,41</td><td>1964 / 3695</td><td>+1, +3 (quadrada plana, octaédrica)</td></tr>
+                        <tr><td>Ósmio (Os)</td><td>135</td><td>2,20</td><td>22,59</td><td>3033 / 5012</td><td>+4, +8 (octaédrica, tetraédrica)</td></tr>
+                        <tr><td>Irídio (Ir)</td><td>136</td><td>2,20</td><td>22,56</td><td>2446 / 4428</td><td>+3, +4 (octaédrica, quadrada plana)</td></tr>
                     </tbody>
-
                 </table>
-
             </div>
 
         </div>
